@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="大学出席管理システム - College Attendance System">
+    <title>ログイン | 大学出席管理システム</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <!--  Login Page -->
+    <div class="container login-container">
+        <div class="login-wrapper">
+            <!-- ヘッダー  -->
+            <div class="header login-header">
+                <h1>大学出席管理システム</h1>
+                <p>Attendance Management System</p>
+                <p class="subtitle">学生ための安全な管理システム</p>
+            </div>
+
+            <!-- ログインフォーム  -->
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>メールアドレス</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email"
+                        placeholder="メールアドレスを入力してください" 
+                        required>
+                    <span id="emailError" class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>パスワード</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password"
+                        placeholder="パスワードを入力してください" 
+                        required>
+                    <span id="passwordError" class="error-message"></span>
+                </div>
+
+                <!-- クラス選択  -->
+                <div class="form-group">
+                    <label>クラスを選択してください</label>
+                    <select id="class" name="class" required>
+                        <option value="">クラスを選択</option>
+                        <option value="CS-101">CS-101 (プログラミング入門)</option>
+                        <option value="CS-102">CS-102 (データ構造)</option>
+                        <option value="CS-201">CS-201 (データベースシステム)</option>
+                        <option value="CS-202">CS-202 (ウェブ開発)</option>
+                        <option value="IT-101">IT-101 (ネットワーク基礎)</option>
+                        <option value="IT-102">IT-102 (システム管理)</option>
+                        <option value="IT-201">IT-201 (クラウドコンピューティング)</option>
+                        <option value="IT-202">IT-202 (サイバーセキュリティ)</option>
+                    </select>
+                    <span id="classError" class="error-message"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    log in
+                </button>
+            </form>            
+        </div>
+    </div>
+<!-- フッター -->
+<footer class="site-footer">
+    <p>
+        © <span id="footerYear"></span> 出席管理システム |
+        <a href="https://www.tuis.ac.jp/" target="_blank">東京情報大学</a>
+         <p> 2024年度・東京情報大学ソフトウェアコンテスト参加作品</p>
+    </p>
+</footer>
+
+    <!-- JavaScript  -->
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ダッシュボード - 大学出席管理システム">
+    <title>ダッシュボード | 大学出席管理システム</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../assets/logo/favicon.ico">
+</head>
+<body>
+    <!--  Dashboard Page -->
+    <div class="dashboard-container">
+        <!--Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-section">
+                <div class="logo-text">
+                    <h2>出席管理</h2>
+                    <p>Attendance System</p>
+                </div>
+            </div>
+
+            <!-- ナビゲーション  -->
+            <nav class="nav-buttons">
+                <button class="nav-btn active" data-section="attendance">
+                    
+                    <span>出席をマーク</span>
+                </button>
+                <button class="nav-btn" data-section="records">
+                    
+                    <span>出席記録</span>
+                </button>
+                <button class="nav-btn" data-section="profile">
+                    
+                    <span>プロフィール</span>
+                </button>
+            </nav>
+
+            <!-- ユーザーカード -->
+            <div class="user-card">
+                <div class="user-avatar">👤</div>
+                <div class="user-name" id="sidebarName">ユーザー</div>
+                <div class="user-role" id="sidebarClass">クラス</div>
+                <button class="btn btn-logout" id="logoutBtn">logout</button>
+            </div>
+        </aside>
+
+        <!--  Main Content -->
+        <main class="main-content">
+            <div class="header">
+                <h1>大学出席管理システムへようこそ</h1>
+                <p>出席管理</p>
+            </div>
+
+            <!-- 出席をマークセクション -->
+            <section id="attendance" class="section active">
+                <div class="card">
+                    <h2>出席をマークする</h2>
+                    <div id="successMessage"></div>
+                    
+                    <form id="attendanceForm">
+                        <div class="form-group">
+                            <label>科目</label>
+                            <select id="subject" required>
+                                <option value="">科目を選択</option>
+                                <option value="データベース">データベース</option>
+                                <option value="ウェブ開発">ウェブ開発</option>
+                                <option value="機械学習">機械学習</option>
+                                <option value="クラウドコンピューティング">クラウドコンピューティング</option>
+                                <option value="ネットワーク">ネットワーク</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>セメスター</label>
+                            <select id="semester" required>
+                                <option value="">セメスターを選択</option>
+                                <option value="春学期2024">春学期 2024</option>
+                                <option value="秋学期2024">秋学期 2024</option>
+                                <option value="冬学期2024">冬学期 2024</option>
+                                <option value="夏学期2024">夏学期 2024</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>時間</label>
+                            <input type="time" id="time">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            ✓ 出席をマーク
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- 出席記録Section -->
+            <section id="records" class="section">
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h2 style="margin: 0;">出席記録</h2>
+                    </div>
+                    <div id="recordsList" class="empty-message">
+                        まだ出席記録がありません
+                    </div>
+                </div>
+            </section>
+
+            <!-- プロフィールSection -->
+            <section id="profile" class="section">
+                <div class="card">
+                    <h2> プロフィール</h2>
+                    <div class="profile-card">
+                        <div class="profile-header">
+                            <div class="profile-avatar">👤</div>
+                            <div class="profile-name" id="profileName">ユーザー名</div>
+                            <div class="profile-email" id="profileEmail">user@college.com</div>
+                            <div class="profile-badge" id="profileClass">クラス</div>
+                        </div>
+
+                        <div class="profile-details">
+                            <div class="detail-box">
+                                <div class="detail-label">ステータス</div>
+                                <div class="detail-value">アクティブ</div>
+                            </div>
+                            <div class="detail-box">
+                                <div class="detail-label">総出席数</div>
+                                <div class="detail-value" id="totalAttendance">0</div>
+                            </div>
+                            <div class="detail-box">
+                                <div class="detail-label">クラス</div>
+                                <div class="detail-value" id="profileClassDetail">-</div>
+                            </div>
+                            <div class="detail-box">
+                                <div class="detail-label">達成率</div>
+                                <div class="detail-value">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- フッター -->
+<footer class="site-footer">
+    <p>
+        © <span id="footerYear"></span> 出席管理システム |
+        <a href="https://www.tuis.ac.jp/" target="_blank">東京情報大学</a>
+         <p> 2024年度・東京情報大学ソフトウェアコンテスト参加作品</p>
+    </p>
+</footer>
+
+ 
+    <!-- JavaScript  -->
+    <script src="../js/script.js"></script>
+   
+</body>
+  
+</html>
